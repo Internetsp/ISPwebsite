@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Service Partners | Authorized AT&T Provider | Business Wireless, Fiber & iPhone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --att-blue: #0057B8;
+            --att-blue-light: #009FDB;
+            --att-blue-dark: #00395C;
+            --att-orange: #FF7200;
+            --dark: #0A0F1C;
+            --dark-secondary: #141B2D;
+            --dark-tertiary: #1E2738;
+            --white: #FFFFFF;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --gray-500: #64748B;
+            --gray-600: #475569;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --accent-green: #00D68F;
+            --accent-gold: #FFB800;
+            
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--white);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* AT&T Logo SVG */
+        .att-globe {
+            display: inline-block;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 48px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+        }
+
+        .nav-att-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--att-blue) 0%, var(--att-blue-dark) 100%);
+            border-radius: 8px;
+        }
+
+        .nav-att-badge svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-att-badge span {
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+
+        .nav-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-brand-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-brand-tag {
+            font-size: 11px;
+            color: var(--att-blue);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--att-blue);
+            background: var(--gray-50);
+        }
+
+        .nav-link.active {
+            color: var(--att-blue);
+            background: rgba(0, 87, 184, 0.08);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 8px;
+            min-width: 220px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-dropdown-item {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .nav-dropdown-item:hover {
+            background: var(--gray-50);
+        }
+
+        .nav-dropdown-item span {
+            display: block;
+            font-size: 12px;
+            color: var(--gray-500);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--att-blue);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--att-blue-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0, 87, 184, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(180deg, var(--dark) 0%, #0D1526 100%);
+            padding: 120px 48px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero-gradient-1 {
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 70%;
+            height: 90%;
+            background: radial-gradient(ellipse at center, rgba(0, 87, 184, 0.25) 0%, transparent 60%);
+            filter: blur(80px);
+        }
+
+        .hero-gradient-2 {
+            position: absolute;
+            bottom: -40%;
+            left: -20%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse at center, rgba(0, 159, 219, 0.15) 0%, transparent 60%);
+            filter: blur(100px);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 500px;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-att-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .hero-att-logo svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .hero-att-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-att-logo-text span:first-child {
+            font-size: 11px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-att-logo-text span:last-child {
+            font-size: 14px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: clamp(42px, 5vw, 64px);
+            font-weight: 700;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--att-blue-light) 0%, var(--att-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray-300);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .hero-feature svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--att-blue-light);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            padding: 16px 32px;
+            background: var(--att-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--att-blue-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 159, 219, 0.3);
+        }
+
+        .btn-secondary {
+            padding: 16px 32px;
+            background: transparent;
+            color: white;
+            border: 1px solid var(--gray-600);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--att-blue-light);
+            color: var(--att-blue-light);
+        }
+
+        .btn-orange {
+            padding: 16px 32px;
+            background: var(--att-orange);
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background: #E66600;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(255, 114, 0, 0.3);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--gray-50);
+            padding: 80px 48px;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-logo {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .faq-logo img {
+            width: 80px;
+            height: auto;
+        }
+
+        .faq-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--att-blue-dark);
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Hero Card */
+        .hero-card {
+            animation: fadeUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-card-inner {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .hero-card-header {
+            background: linear-gradient(135deg, var(--att-blue) 0%, var(--att-blue-dark) 100%);
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-card-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-card-header svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .hero-card-header-text {
+            color: white;
+        }
+
+        .hero-card-header-text span:first-child {
+            display: block;
+            font-size: 11px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-card-header-text span:last-child {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .hero-card-badge {
+            background: var(--accent-green);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .hero-card-body {
+            padding: 32px;
+        }
+
+        .hero-card-plan {
+            margin-bottom: 24px;
+        }
+
+        .hero-card-plan-name {
+            font-size: 13px;
+            color: var(--att-blue-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
+        .hero-card-plan-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .hero-card-plan-subtitle {
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+
+        .hero-card-price {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .hero-card-price-currency {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--gray-400);
+        }
+
+        .hero-card-price-amount {
+            font-size: 72px;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-card-price-period {
+            font-size: 16px;
+            color: var(--gray-400);
+            margin-left: 4px;
+        }
+
+        .hero-card-price-note {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+        }
+
+        .hero-card-savings {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(0, 214, 143, 0.1);
+            border: 1px solid rgba(0, 214, 143, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 28px;
+        }
+
+        .hero-card-savings-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(0, 214, 143, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .hero-card-savings-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent-green);
+        }
+
+        .hero-card-savings-text {
+            flex: 1;
+        }
+
+        .hero-card-savings-label {
+            font-size: 11px;
+            color: var(--accent-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 2px;
+        }
+
+        .hero-card-savings-value {
+            font-size: 14px;
+            color: white;
+            font-weight: 500;
+        }
+
+        .hero-card-features {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .hero-card-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray-300);
+            font-size: 14px;
+        }
+
+        .hero-card-feature-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(0, 159, 219, 0.15);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .hero-card-feature-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: var(--att-blue-light);
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--att-orange) 0%, #E65C00 100%);
+            padding: 16px 48px;
+            overflow: hidden;
+        }
+
+        .promo-banner-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .promo-banner-text {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .promo-banner-text svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .promo-banner-cta {
+            background: white;
+            color: var(--att-orange);
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .promo-banner-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 48px;
+        }
+
+        .trust-bar-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .trust-icon {
+            width: 52px;
+            height: 52px;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trust-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--att-blue);
+        }
+
+        .trust-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trust-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .trust-label {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        /* iPhone Section */
+        .iphone-section {
+            padding: 120px 48px;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .iphone-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gray-50) 0%, transparent 100%);
+        }
+
+        .iphone-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+        }
+
+        .iphone-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(0, 87, 184, 0.08);
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+
+        .section-badge svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--att-blue);
+        }
+
+        .section-badge span {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--att-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .iphone-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .iphone-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .iphone-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--att-blue) 0%, var(--att-blue-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .iphone-feature-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        .iphone-feature-text h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .iphone-feature-text p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        .iphone-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .iphone-image-bg {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 87, 184, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .iphone-mockup {
+            position: relative;
+            width: 280px;
+            height: 560px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 44px;
+            padding: 12px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .iphone-mockup-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--att-blue) 0%, var(--att-blue-dark) 100%);
+            border-radius: 36px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .iphone-mockup-logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .iphone-mockup-text {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .iphone-mockup-subtext {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+        }
+
+        .iphone-badge {
+            position: absolute;
+            top: 40px;
+            right: -20px;
+            background: var(--att-orange);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: 0 8px 24px rgba(255, 114, 0, 0.4);
+            transform: rotate(8deg);
+        }
+
+        /* Plans Section */
+        .plans-section {
+            padding: 120px 48px;
+            background: var(--gray-50);
+        }
+
+        .plans-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .plans-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .plans-att-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .plans-att-badge svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .plans-att-badge span {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--att-blue);
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .plan-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px 32px;
+            position: relative;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .plan-card:hover {
+            border-color: var(--att-blue);
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(0, 87, 184, 0.12);
+        }
+
+        .plan-card.featured {
+            border-color: var(--att-blue);
+            background: linear-gradient(180deg, rgba(0, 87, 184, 0.03) 0%, white 100%);
+        }
+
+        .plan-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--att-blue);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .plan-tier {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--gray-100);
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .plan-card.featured .plan-tier {
+            background: rgba(0, 87, 184, 0.1);
+            color: var(--att-blue);
+        }
+
+        .plan-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .plan-tagline {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+            min-height: 40px;
+        }
+
+        .plan-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+
+        .plan-price-currency {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--gray-500);
+        }
+
+        .plan-price-amount {
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--att-blue);
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+
+        .plan-price-period {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .plan-price-note {
+            font-size: 12px;
+            color: var(--gray-400);
+            margin-bottom: 8px;
+        }
+
+        .plan-price-compare {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            background: rgba(0, 214, 143, 0.1);
+            border-radius: 8px;
+            margin-bottom: 28px;
+        }
+
+        .plan-price-compare svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .plan-price-compare span {
+            font-size: 12px;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        .plan-features {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .plan-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .plan-feature svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-green);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .plan-feature strong {
+            color: var(--dark);
+        }
+
+        .plan-cta {
+            width: 100%;
+            padding: 16px;
+            font-size: 15px;
+        }
+
+        .plan-card.featured .plan-cta {
+            background: var(--att-blue);
+        }
+
+        /* Non-Phone Plans */
+        .devices-section {
+            padding: 120px 48px;
+            background: var(--white);
+        }
+
+        .devices-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .devices-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 48px;
+        }
+
+        .devices-header-text {
+            max-width: 500px;
+        }
+
+        .devices-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .device-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .device-card:hover {
+            background: white;
+            border-color: var(--att-blue);
+            box-shadow: 0 12px 24px rgba(0, 87, 184, 0.08);
+        }
+
+        .device-icon {
+            width: 56px;
+            height: 56px;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .device-card:hover .device-icon {
+            background: var(--att-blue);
+            border-color: var(--att-blue);
+        }
+
+        .device-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--att-blue);
+            transition: stroke 0.3s ease;
+        }
+
+        .device-card:hover .device-icon svg {
+            stroke: white;
+        }
+
+        .device-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .device-data {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+
+        .device-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--att-blue);
+        }
+
+        .device-price span {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-500);
+        }
+
+        /* Fiber Section */
+        .fiber-section {
+            padding: 120px 48px;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fiber-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .fiber-gradient {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse at 80% 50%, rgba(0, 159, 219, 0.15) 0%, transparent 60%);
+        }
+
+        .fiber-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .fiber-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .fiber-text .section-badge {
+            background: rgba(0, 159, 219, 0.15);
+        }
+
+        .fiber-text .section-badge span {
+            color: var(--att-blue-light);
+        }
+
+        .fiber-text .section-title {
+            color: white;
+        }
+
+        .fiber-text .section-subtitle {
+            color: var(--gray-400);
+        }
+
+        .fiber-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .fiber-stat {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .fiber-stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .fiber-stat-value span {
+            color: var(--att-blue-light);
+        }
+
+        .fiber-stat-label {
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        .fiber-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .fiber-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .fiber-card-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--att-blue-light) 0%, var(--att-blue) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fiber-card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+        }
+
+        .fiber-card-title {
+            flex: 1;
+        }
+
+        .fiber-card-title span {
+            display: block;
+            font-size: 11px;
+            color: var(--att-blue-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 4px;
+        }
+
+        .fiber-card-title h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .fiber-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .fiber-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--gray-300);
+            font-size: 15px;
+        }
+
+        .fiber-feature-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(0, 159, 219, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .fiber-feature-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--att-blue-light);
+        }
+
+        .fiber-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .fiber-price-label {
+            font-size: 14px;
+            color: var(--gray-400);
+            margin-right: 8px;
+        }
+
+        .fiber-price-amount {
+            font-size: 44px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .fiber-price-period {
+            font-size: 16px;
+            color: var(--gray-400);
+        }
+
+        /* Industries */
+        .industries-section {
+            padding: 120px 48px;
+            background: var(--gray-50);
+        }
+
+        .industries-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .industries-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .industry-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .industry-card:hover {
+            border-color: var(--att-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0, 87, 184, 0.08);
+        }
+
+        .industry-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gray-50);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            transition: all 0.3s ease;
+        }
+
+        .industry-card:hover .industry-icon {
+            background: var(--att-blue);
+        }
+
+        .industry-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--att-blue);
+            transition: stroke 0.3s ease;
+        }
+
+        .industry-card:hover .industry-icon svg {
+            stroke: white;
+        }
+
+        .industry-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 48px;
+            background: var(--white);
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--att-blue) 0%, var(--att-blue-dark) 100%);
+            border-radius: 28px;
+            padding: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .cta-bg-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .cta-text h2 {
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .cta-text p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .cta-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cta-benefit {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+        }
+
+        .cta-benefit-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cta-benefit-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: white;
+        }
+
+        .cta-form {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .cta-form h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: var(--font-main);
+            transition: all 0.2s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--att-blue);
+            background: white;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            margin-top: 8px;
+            background: var(--att-blue);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background: var(--att-blue-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 80px 48px 40px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand {
+            max-width: 280px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-logo span {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-att-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 18px;
+            background: rgba(0, 87, 184, 0.15);
+            border: 1px solid rgba(0, 87, 184, 0.3);
+            border-radius: 10px;
+        }
+
+        .footer-att-badge svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-att-badge span {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--att-blue-light);
+        }
+
+        .footer-column h4 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-legal a {
+            font-size: 13px;
+            color: var(--gray-500);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-legal a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-content,
+            .iphone-container,
+            .fiber-content,
+            .cta-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .devices-grid,
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner,
+            .hero,
+            .trust-bar,
+            .iphone-section,
+            .plans-section,
+            .devices-section,
+            .fiber-section,
+            .industries-section,
+            .cta-section,
+            .footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .trust-bar-inner {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .devices-grid,
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fiber-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-card {
+                padding: 48px 28px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <div class="nav-att-badge">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="22" fill="white"/>
+                        <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18 18-8.059 18-18S33.941 6 24 6zm-1.5 29.89c-6.325-.785-11.2-6.16-11.2-12.69 0-.99.13-1.94.34-2.86l9.26 9.26v1.6c0 1.76 1.44 3.2 3.2 3.2v1.49zm11.02-4.07c-.42-1.3-1.6-2.22-3.04-2.22h-1.6v-4.8c0-.88-.72-1.6-1.6-1.6h-9.6v-3.2h3.2c.88 0 1.6-.72 1.6-1.6v-3.2h3.2c1.76 0 3.2-1.44 3.2-3.2v-.66c4.69 1.91 8 6.5 8 11.86 0 3.33-1.28 6.35-3.36 8.62z" fill="#0057B8"/>
+                    </svg>
+                    <span>Authorized<br>AT&T Provider</span>
+                </div>
+                <div class="nav-brand">
+                    <span class="nav-brand-name">Internet Service Partners</span>
+                    <span class="nav-brand-tag">Business Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="nav-dropdown">
+                    <a href="#plans" class="nav-link">Phone Plans ▾</a>
+                    <div class="nav-dropdown-content">
+                        <a href="#plans" class="nav-dropdown-item">Business Unlimited Standard<span>Starting at $5/line</span></a>
+                        <a href="#plans" class="nav-dropdown-item">Business Unlimited Advanced<span>Starting at $10/line</span></a>
+                        <a href="#plans" class="nav-dropdown-item">Business Unlimited Premium<span>Starting at $20/line</span></a>
+                    </div>
+                </li>
+                <li><a href="#devices" class="nav-link">Devices</a></li>
+                <li><a href="#iphone" class="nav-link">iPhone</a></li>
+                <li><a href="#fiber" class="nav-link">Fiber</a></li>
+                <li><a href="#industries" class="nav-link">Industries</a></li>
+            <!-- Added FAQ link so visitors can jump directly to answers about pricing, plan authenticity and qualifications -->
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient-1"></div>
+            <div class="hero-gradient-2"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-att-logo">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="22" fill="#0057B8"/>
+                        <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18 18-8.059 18-18S33.941 6 24 6zm-1.5 29.89c-6.325-.785-11.2-6.16-11.2-12.69 0-.99.13-1.94.34-2.86l9.26 9.26v1.6c0 1.76 1.44 3.2 3.2 3.2v1.49zm11.02-4.07c-.42-1.3-1.6-2.22-3.04-2.22h-1.6v-4.8c0-.88-.72-1.6-1.6-1.6h-9.6v-3.2h3.2c.88 0 1.6-.72 1.6-1.6v-3.2h3.2c1.76 0 3.2-1.44 3.2-3.2v-.66c4.69 1.91 8 6.5 8 11.86 0 3.33-1.28 6.35-3.36 8.62z" fill="white"/>
+                    </svg>
+                    <div class="hero-att-logo-text">
+                        <span>Powered by</span>
+                        <span>AT&T Business</span>
+                    </div>
+                </div>
+                <h1 class="hero-title">Unlimited Your Way<span class="highlight">®</span> for Business at Exclusive Dealer Rates</h1>
+                <p class="hero-subtitle">Pick the perfect AT&T Business Unlimited plan for each of your employees. All plans include 5G access, unlimited data, talk, and text in the U.S., Canada, and Mexico.</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>AT&T 5G/5G+ Access</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>U.S., Canada & Mexico</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>AT&T ActiveArmor℠ Security</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#plans" class="btn btn-primary">View Business Plans</a>
+                    <a href="#contact" class="btn btn-secondary">Request a Quote</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-inner">
+                    <div class="hero-card-header">
+                        <div class="hero-card-header-left">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="22" fill="white"/>
+                                <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18 18-8.059 18-18S33.941 6 24 6zm-1.5 29.89c-6.325-.785-11.2-6.16-11.2-12.69 0-.99.13-1.94.34-2.86l9.26 9.26v1.6c0 1.76 1.44 3.2 3.2 3.2v1.49zm11.02-4.07c-.42-1.3-1.6-2.22-3.04-2.22h-1.6v-4.8c0-.88-.72-1.6-1.6-1.6h-9.6v-3.2h3.2c.88 0 1.6-.72 1.6-1.6v-3.2h3.2c1.76 0 3.2-1.44 3.2-3.2v-.66c4.69 1.91 8 6.5 8 11.86 0 3.33-1.28 6.35-3.36 8.62z" fill="#0057B8"/>
+                            </svg>
+                            <div class="hero-card-header-text">
+                                <span>Featured Plan</span>
+                                <span>AT&T Business Unlimited</span>
+                            </div>
+                        </div>
+                        <div class="hero-card-badge">Save $25/line</div>
+                    </div>
+                    <div class="hero-card-body">
+                        <div class="hero-card-plan">
+                            <div class="hero-card-plan-name">Business Unlimited Advanced</div>
+                            <div class="hero-card-plan-title">Best Value for Teams</div>
+                            <div class="hero-card-plan-subtitle">100GB hotspot · HD streaming · 5G access</div>
+                        </div>
+                        <div class="hero-card-price">
+                            <span class="hero-card-price-currency">$</span>
+                            <span class="hero-card-price-amount">10</span>
+                            <span class="hero-card-price-period">/line/mo</span>
+                        </div>
+                        <p class="hero-card-price-note">With 5+ lines · BYOD or full-price phone</p>
+                        <div class="hero-card-savings">
+                            <div class="hero-card-savings-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </div>
+                            <div class="hero-card-savings-text">
+                                <span class="hero-card-savings-label">Exclusive Dealer Savings</span>
+                                <span class="hero-card-savings-value">$25 less per line vs. AT&T direct rate of $35</span>
+                            </div>
+                        </div>
+                        <div class="hero-card-features">
+                            <div class="hero-card-feature">
+                                <div class="hero-card-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <span>Unlimited data, talk & text</span>
+                            </div>
+                            <div class="hero-card-feature">
+                                <div class="hero-card-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <span>100GB mobile hotspot data</span>
+                            </div>
+                            <div class="hero-card-feature">
+                                <div class="hero-card-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <span>AT&T ActiveArmor℠ advanced security</span>
+                            </div>
+                            <div class="hero-card-feature">
+                                <div class="hero-card-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <span>HD video streaming included</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <!-- Display the AT&T logo prominently to reinforce brand trust -->
+            <div class="faq-logo">
+                <img src="att-logo.png" alt="AT&T logo">
+            </div>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">How is pricing this cheap?</h3>
+                <p class="faq-answer">AT&T empowers us with unadvertised pricing reserved exclusively for our authorized dealer network. By bundling multiple business lines and leveraging volume discounts, we’re able to pass those savings directly on to you without sacrificing network quality or support.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Is this a real AT&T plan?</h3>
+                <p class="faq-answer">Yes. These are authentic AT&T Business Unlimited plans on the same nationwide network with the same features, coverage and reliability you’d receive if you purchased through AT&T directly. The only difference is our exclusive dealer pricing.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How do I qualify?</h3>
+                <p class="faq-answer">To be eligible you must be a legal entity with a valid Employer Identification Number (EIN) and meet the minimum line requirement (for example 5 or more lines). Our specialists will walk you through a simple approval process and ensure you choose the right plan for your organization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="promo-banner-inner">
+            <div class="promo-banner-text">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+                <span>🎉 iPhone 16 Pro Now Available — Get up to $1000 off with eligible trade-in on qualifying AT&T Business plans</span>
+            </div>
+            <a href="#iphone" class="promo-banner-cta">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-bar-inner">
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <div class="trust-text">
+                    <span class="trust-value">Authorized</span>
+                    <span class="trust-label">AT&T Business Partner</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                </div>
+                <div class="trust-text">
+                    <span class="trust-value">$25/line</span>
+                    <span class="trust-label">Savings vs. Direct</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <div class="trust-text">
+                    <span class="trust-value">500+</span>
+                    <span class="trust-label">Businesses Deployed</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="trust-text">
+                    <span class="trust-value">24/7</span>
+                    <span class="trust-label">Dedicated Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- iPhone Section -->
+    <section class="iphone-section" id="iphone">
+        <div class="iphone-container">
+            <div class="iphone-content">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                    <span>Devices</span>
+                </div>
+                <h2 class="section-title">iPhone 16 Pro for Business</h2>
+                <p class="section-subtitle">The most powerful iPhone ever, now optimized for business. With advanced security features, 5G connectivity, and all-day battery life—your team stays productive anywhere.</p>
+                
+                <div class="iphone-features">
+                    <div class="iphone-feature">
+                        <div class="iphone-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="iphone-feature-text">
+                            <h4>Up to $1,000 Off</h4>
+                            <p>With eligible trade-in on qualifying AT&T Business Unlimited plans</p>
+                        </div>
+                    </div>
+                    <div class="iphone-feature">
+                        <div class="iphone-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <div class="iphone-feature-text">
+                            <h4>Enterprise Security</h4>
+                            <p>Face ID, on-device encryption, and AT&T ActiveArmor℠ protection</p>
+                        </div>
+                    </div>
+                    <div class="iphone-feature">
+                        <div class="iphone-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <div class="iphone-feature-text">
+                            <h4>5G Business Performance</h4>
+                            <p>Lightning-fast connectivity on AT&T's 5G network nationwide</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn btn-orange">Get iPhone for Your Team</a>
+            </div>
+            <div class="iphone-image">
+                <div class="iphone-image-bg"></div>
+                <div class="iphone-mockup">
+                    <div class="iphone-mockup-screen">
+                        <svg class="iphone-mockup-logo" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="22" fill="white"/>
+                            <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18 18-8.059 18-18S33.941 6 24 6zm-1.5 29.89c-6.325-.785-11.2-6.16-11.2-12.69 0-.99.13-1.94.34-2.86l9.26 9.26v1.6c0 1.76 1.44 3.2 3.2 3.2v1.49zm11.02-4.07c-.42-1.3-1.6-2.22-3.04-2.22h-1.6v-4.8c0-.88-.72-1.6-1.6-1.6h-9.6v-3.2h3.2c.88 0 1.6-.72 1.6-1.6v-3.2h3.2c1.76 0 3.2-1.44 3.2-3.2v-.66c4.69 1.91 8 6.5 8 11.86 0 3.33-1.28 6.35-3.36 8.62z" fill="#0057B8"/>
+                        </svg>
+                        <div class="iphone-mockup-text">AT&T Business</div>
+                        <div class="iphone-mockup-subtext">Connected. Protected. Productive.</div>
+                    </div>
+                </div>
+                <div class="iphone-badge">Up to $1000 Off</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section class="plans-section" id="plans">
+        <div class="plans-container">
+            <div class="plans-header">
+                <div class="plans-att-badge">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="22" fill="#0057B8"/>
+                        <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18 18-8.059 18-18S33.941 6 24 6zm-1.5 29.89c-6.325-.785-11.2-6.16-11.2-12.69 0-.99.13-1.94.34-2.86l9.26 9.26v1.6c0 1.76 1.44 3.2 3.2 3.2v1.49zm11.02-4.07c-.42-1.3-1.6-2.22-3.04-2.22h-1.6v-4.8c0-.88-.72-1.6-1.6-1.6h-9.6v-3.2h3.2c.88 0 1.6-.72 1.6-1.6v-3.2h3.2c1.76 0 3.2-1.44 3.2-3.2v-.66c4.69 1.91 8 6.5 8 11.86 0 3.33-1.28 6.35-3.36 8.62z" fill="white"/>
+                    </svg>
+                    <span>AT&T Business Unlimited</span>
+                </div>
+                <h2 class="section-title">Unlimited Your Way® for Business</h2>
+                <p class="section-subtitle">Pick the perfect plan for each employee. Mix and match across your team—all with exclusive dealer pricing.</p>
+            </div>
+
+            <div class="plans-grid">
+                <!-- Standard Plan -->
+                <div class="plan-card">
+                    <span class="plan-tier">Value</span>
+                    <h3 class="plan-name">Business Unlimited Standard</h3>
+                    <p class="plan-tagline">Essential connectivity for cost-conscious teams</p>
+                    
+                    <div class="plan-price-row">
+                        <span class="plan-price-currency">$</span>
+                        <span class="plan-price-amount">5</span>
+                        <span class="plan-price-period">/line/mo</span>
+                    </div>
+                    <p class="plan-price-note">With 5+ lines · BYOD or full-price phone</p>
+                    <div class="plan-price-compare">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Save $25/line vs. $30 AT&T direct</span>
+                    </div>
+
+                    <div class="plan-features">
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>Unlimited</strong> data, talk & text</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>5GB</strong> mobile hotspot data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>AT&T 5G</strong> network access</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>AT&T ActiveArmor℠</strong> mobile security</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>SD</strong> video streaming</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>U.S., Canada & Mexico</strong> coverage</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-secondary plan-cta">Get Started</a>
+                </div>
+
+                <!-- Advanced Plan -->
+                <div class="plan-card featured">
+                    <span class="plan-tier">Recommended</span>
+                    <h3 class="plan-name">Business Unlimited Advanced</h3>
+                    <p class="plan-tagline">Best value with enhanced features for growing teams</p>
+                    
+                    <div class="plan-price-row">
+                        <span class="plan-price-currency">$</span>
+                        <span class="plan-price-amount">10</span>
+                        <span class="plan-price-period">/line/mo</span>
+                    </div>
+                    <p class="plan-price-note">With 5+ lines · BYOD or full-price phone</p>
+                    <div class="plan-price-compare">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Save $25/line vs. $35 AT&T direct</span>
+                    </div>
+
+                    <div class="plan-features">
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>Unlimited</strong> data, talk & text</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>100GB</strong> mobile hotspot data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>AT&T 5G/5G+</strong> network access</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>AT&T ActiveArmor℠ Advanced</strong> security</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>HD</strong> video streaming</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>U.S., Canada & Mexico</strong> coverage</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary plan-cta">Get Started</a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="plan-card">
+                    <span class="plan-tier">Premium</span>
+                    <h3 class="plan-name">Business Unlimited Premium</h3>
+                    <p class="plan-tagline">Maximum features for executives & road warriors</p>
+                    
+                    <div class="plan-price-row">
+                        <span class="plan-price-currency">$</span>
+                        <span class="plan-price-amount">20</span>
+                        <span class="plan-price-period">/line/mo</span>
+                    </div>
+                    <p class="plan-price-note">With 5+ lines · BYOD or full-price phone</p>
+                    <div class="plan-price-compare">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Save $25/line vs. $45 AT&T direct</span>
+                    </div>
+
+                    <div class="plan-features">
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>Unlimited</strong> data, talk & text</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>200GB</strong> mobile hotspot data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>AT&T 5G/5G+</strong> network access</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>AT&T ActiveArmor℠ Advanced</strong> security</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>HD & 4K UHD</strong> video streaming</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>Roam Latin America℠</strong> for Business</span>
+                        </div>
+                        <div class="plan-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>Int'l Day Pass</strong> 7 days free/month</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-secondary plan-cta">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Devices Section -->
+    <section class="devices-section" id="devices">
+        <div class="devices-container">
+            <div class="devices-header">
+                <div class="devices-header-text">
+                    <div class="section-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"/>
+                            <rect x="9" y="9" width="6" height="6"/>
+                            <line x1="9" y1="1" x2="9" y2="4"/>
+                            <line x1="15" y1="1" x2="15" y2="4"/>
+                            <line x1="9" y1="20" x2="9" y2="23"/>
+                            <line x1="15" y1="20" x2="15" y2="23"/>
+                            <line x1="20" y1="9" x2="23" y2="9"/>
+                            <line x1="20" y1="14" x2="23" y2="14"/>
+                            <line x1="1" y1="9" x2="4" y2="9"/>
+                            <line x1="1" y1="14" x2="4" y2="14"/>
+                        </svg>
+                        <span>Non-Phone Devices</span>
+                    </div>
+                    <h2 class="section-title">Connect Every Device</h2>
+                    <p class="section-subtitle">Add tablets, laptops, wearables, and hotspots to your Unlimited Your Way® plan group.</p>
+                </div>
+            </div>
+
+            <div class="devices-grid">
+                <div class="device-card">
+                    <div class="device-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h4 class="device-name">Tablet Premium</h4>
+                    <p class="device-data">Unlimited data · 40GB hotspot</p>
+                    <div class="device-price">$20<span>/mo</span></div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h4 class="device-name">Laptop Premium</h4>
+                    <p class="device-data">Unlimited data · 50GB priority</p>
+                    <div class="device-price">$40<span>/mo</span></div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h4 class="device-name">Wearable</h4>
+                    <p class="device-data">Apple Watch / Android</p>
+                    <div class="device-price">$10<span>/mo</span></div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+                            <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                            <line x1="12" y1="20" x2="12.01" y2="20"/>
+                        </svg>
+                    </div>
+                    <h4 class="device-name">Mobile Hotspot</h4>
+                    <p class="device-data">15GB / 50GB / 100GB plans</p>
+                    <div class="device-price">From $25<span>/mo</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fiber Section -->
+    <section class="fiber-section" id="fiber">
+        <div class="fiber-bg">
+            <div class="fiber-gradient"></div>
+        </div>
+        <div class="fiber-container">
+            <div class="fiber-content">
+                <div class="fiber-text">
+                    <div class="section-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                        <span>AT&T Business Fiber</span>
+                    </div>
+                    <h2 class="section-title">Lightning-Fast Fiber Internet</h2>
+                    <p class="section-subtitle">Symmetric speeds, dedicated bandwidth, and 99.99% uptime SLA. The foundation your business needs to operate at peak performance.</p>
+                    
+                    <div class="fiber-stats">
+                        <div class="fiber-stat">
+                            <div class="fiber-stat-value">5<span>Gbps</span></div>
+                            <div class="fiber-stat-label">Maximum Speed</div>
+                        </div>
+                        <div class="fiber-stat">
+                            <div class="fiber-stat-value">99.<span>99%</span></div>
+                            <div class="fiber-stat-label">Uptime SLA</div>
+                        </div>
+                        <div class="fiber-stat">
+                            <div class="fiber-stat-value"><span>=</span>Up/Down</div>
+                            <div class="fiber-stat-label">Symmetric Speeds</div>
+                        </div>
+                        <div class="fiber-stat">
+                            <div class="fiber-stat-value">24<span>/7</span></div>
+                            <div class="fiber-stat-label">Priority Support</div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">Check Fiber Availability</a>
+                </div>
+
+                <div class="fiber-card">
+                    <div class="fiber-card-header">
+                        <div class="fiber-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <div class="fiber-card-title">
+                            <span>Business Internet</span>
+                            <h3>AT&T Business Fiber</h3>
+                        </div>
+                    </div>
+                    <div class="fiber-features-list">
+                        <div class="fiber-feature-item">
+                            <div class="fiber-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Speeds from 100 Mbps to 5 Gbps</span>
+                        </div>
+                        <div class="fiber-feature-item">
+                            <div class="fiber-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Symmetric upload and download</span>
+                        </div>
+                        <div class="fiber-feature-item">
+                            <div class="fiber-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>No data caps or throttling</span>
+                        </div>
+                        <div class="fiber-feature-item">
+                            <div class="fiber-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Enterprise-grade SLA included</span>
+                        </div>
+                        <div class="fiber-feature-item">
+                            <div class="fiber-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Static IP options available</span>
+                        </div>
+                    </div>
+                    <div class="fiber-price-row">
+                        <span class="fiber-price-label">Starting at</span>
+                        <span class="fiber-price-amount">$90</span>
+                        <span class="fiber-price-period">/mo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries-section" id="industries">
+        <div class="industries-container">
+            <div class="industries-header">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <span>Industries</span>
+                </div>
+                <h2 class="section-title">Trusted Across Every Sector</h2>
+                <p class="section-subtitle">From fleet operations to healthcare, we provide tailored AT&T Business solutions for organizations of all types.</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <rect x="1" y="3" width="15" height="13"/>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/>
+                            <circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Fleet & Logistics</h3>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Real Estate</h3>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Healthcare</h3>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Financial Services</h3>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <path d="M16 10a4 4 0 0 1-8 0"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Retail</h3>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Education</h3>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Construction</h3>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Professional Services</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <div class="cta-card">
+                <div class="cta-bg">
+                    <div class="cta-bg-pattern"></div>
+                </div>
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <h2>Ready to Connect Your Business?</h2>
+                        <p>Get a personalized quote and discover exclusive dealer pricing on AT&T Business solutions. Same network, same reliability—dramatically lower cost.</p>
+                        <div class="cta-benefits">
+                            <div class="cta-benefit">
+                                <div class="cta-benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <span>Free business connectivity assessment</span>
+                            </div>
+                            <div class="cta-benefit">
+                                <div class="cta-benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <span>Custom solution design for your team</span>
+                            </div>
+                            <div class="cta-benefit">
+                                <div class="cta-benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <span>White-glove migration & support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cta-form">
+                        <h3>Get Your Free Quote</h3>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-input" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-input" placeholder="Smith" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Business Email</label>
+                                <input type="email" class="form-input" placeholder="john@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" placeholder="(555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Number of Lines Needed</label>
+                                <input type="number" class="form-input" placeholder="e.g., 10">
+                            </div>
+                            <button type="submit" class="form-submit">Get My Quote →</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="22" fill="#0057B8"/>
+                            <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18 18-8.059 18-18S33.941 6 24 6zm-1.5 29.89c-6.325-.785-11.2-6.16-11.2-12.69 0-.99.13-1.94.34-2.86l9.26 9.26v1.6c0 1.76 1.44 3.2 3.2 3.2v1.49zm11.02-4.07c-.42-1.3-1.6-2.22-3.04-2.22h-1.6v-4.8c0-.88-.72-1.6-1.6-1.6h-9.6v-3.2h3.2c.88 0 1.6-.72 1.6-1.6v-3.2h3.2c1.76 0 3.2-1.44 3.2-3.2v-.66c4.69 1.91 8 6.5 8 11.86 0 3.33-1.28 6.35-3.36 8.62z" fill="white"/>
+                        </svg>
+                        <span>Internet Service Partners</span>
+                    </div>
+                    <p class="footer-desc">Your trusted authorized AT&T provider delivering enterprise-grade business connectivity at exclusive dealer rates.</p>
+                    <div class="footer-att-badge">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="22" fill="#009FDB"/>
+                            <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18 18-8.059 18-18S33.941 6 24 6zm-1.5 29.89c-6.325-.785-11.2-6.16-11.2-12.69 0-.99.13-1.94.34-2.86l9.26 9.26v1.6c0 1.76 1.44 3.2 3.2 3.2v1.49zm11.02-4.07c-.42-1.3-1.6-2.22-3.04-2.22h-1.6v-4.8c0-.88-.72-1.6-1.6-1.6h-9.6v-3.2h3.2c.88 0 1.6-.72 1.6-1.6v-3.2h3.2c1.76 0 3.2-1.44 3.2-3.2v-.66c4.69 1.91 8 6.5 8 11.86 0 3.33-1.28 6.35-3.36 8.62z" fill="white"/>
+                        </svg>
+                        <span>Authorized AT&T Dealer</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Phone Plans</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Business Unlimited Standard</a></li>
+                        <li><a href="#">Business Unlimited Advanced</a></li>
+                        <li><a href="#">Business Unlimited Premium</a></li>
+                        <li><a href="#">Compare Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Devices</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">iPhone 16 Pro</a></li>
+                        <li><a href="#">Samsung Galaxy</a></li>
+                        <li><a href="#">Tablets</a></li>
+                        <li><a href="#">Mobile Hotspots</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Business Internet</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">AT&T Business Fiber</a></li>
+                        <li><a href="#">Dedicated Internet</a></li>
+                        <li><a href="#">VoIP Solutions</a></li>
+                        <li><a href="#">Check Availability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Billing Support</a></li>
+                        <li><a href="#">1-800-XXX-XXXX</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Internet Service Partners. All rights reserved. An Authorized AT&T Provider. AT&T and the Globe logo are registered trademarks of AT&T Intellectual Property.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! An AT&T Business specialist will contact you within 24 hours.');
+        });
+
+        // Scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.plan-card, .device-card, .industry-card').forEach((el, i) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
